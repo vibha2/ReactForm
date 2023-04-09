@@ -13,7 +13,9 @@ function App() {
       email: "",
       comments: "",
       isVisible:true,
-      mode:""
+      mode:"",
+      favCar:"",
+
     });
 
   console.log(formData);
@@ -110,6 +112,7 @@ function App() {
           name="mode"
           id="Online-Mode"
           value="Online-Mode"
+          checked={formData.mode === "Online-Mode"}
 
         />
         <label htmlFor='Online-Mode'>Online Mode</label>
@@ -122,9 +125,58 @@ function App() {
           name="mode"
           id="Offline-Mode"
           value="Offline-Mode"
+          checked={formData.mode === "Offline-Mode"}
 
         />
         <label htmlFor='Offline-Mode'>Offline Mode</label>
+
+        {/* radio button group */}
+        <fieldset>
+          <legend>Mode:</legend>
+          <input
+          type="radio"
+          onChange={changeHandler}
+          name="mode"
+          id="Online-Mode"
+          value="Online-Mode"
+          checked={formData.mode === "Online-Mode"}
+
+        />
+        <label htmlFor='Online-Mode'>Online Mode</label>
+        {/* if all radio button have same name,
+         then we can tick all radio button at same time  */}
+
+         <input
+          type="radio"
+          onChange={changeHandler}
+          name="mode"
+          id="Offline-Mode"
+          value="Offline-Mode"
+          checked={formData.mode === "Offline-Mode"}
+
+        />
+        <label htmlFor='Offline-Mode'>Offline Mode</label>
+        </fieldset>
+
+        {/* Dropdowns */}
+
+         <label htmlFor='favCar'>Tell me your Favourite Car </label>
+        <select
+        onChange={changeHandler}
+        name="favCar"
+        id="favCar"
+        value={formData.favCar}
+        >
+
+        <option value="scarpio">Scarpio</option>
+        <option value="fartuner">fartuner</option>
+        <option value="Tharrr">Tharrr</option>
+        <option value="Legender">Legender</option>
+        <option value="Defender">Defender</option>
+
+        </select>
+
+
 
       </form>
     </div>
