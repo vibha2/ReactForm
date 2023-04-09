@@ -116,6 +116,15 @@ function App() {
         {/* if all radio button have same name,
          then we can tick all radio button at same time  */}
 
+         <input
+          type="radio"
+          onChange={changeHandler}
+          name="mode"
+          id="Offline-Mode"
+          value="Offline-Mode"
+
+        />
+        <label htmlFor='Offline-Mode'>Offline Mode</label>
 
       </form>
     </div>
