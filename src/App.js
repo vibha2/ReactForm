@@ -35,6 +35,12 @@ function App() {
     });
   }
 
+  function submitHandler(event) {
+    event.preventDefault();
+    console.log("printing entire data: ");
+    console.log(formData);
+  }
+
   // function changeFirstNameHandler(event){
   //   // console.log("first name",event.target.value);
   //   setFirstName(event.target.value);
@@ -47,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <form>
+      <form onSubmit={submitHandler} >
         <input
           type="text"
           placeholder='first name'
@@ -106,7 +112,7 @@ function App() {
 
        {/* radio button */}
 
-       <input
+       {/* <input
           type="radio"
           onChange={changeHandler}
           name="mode"
@@ -115,11 +121,11 @@ function App() {
           checked={formData.mode === "Online-Mode"}
 
         />
-        <label htmlFor='Online-Mode'>Online Mode</label>
+        <label htmlFor='Online-Mode'>Online Mode</label> */}
         {/* if all radio button have same name,
          then we can tick all radio button at same time  */}
 
-         <input
+         {/* <input
           type="radio"
           onChange={changeHandler}
           name="mode"
@@ -128,7 +134,7 @@ function App() {
           checked={formData.mode === "Offline-Mode"}
 
         />
-        <label htmlFor='Offline-Mode'>Offline Mode</label>
+        <label htmlFor='Offline-Mode'>Offline Mode</label> */}
 
         {/* radio button group */}
         <fieldset>
@@ -175,6 +181,10 @@ function App() {
         <option value="Defender">Defender</option>
 
         </select>
+         <br/>
+         <br/>
+        {/* <input type="submit" value="submit" /> */}
+        <button>Submit</button>
 
 
 
